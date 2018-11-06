@@ -1,0 +1,37 @@
+ {% extends 'perris/base.html' %} {% block content %}
+<div class="container">
+  <h1 class="titulo-general">Perros Rescatados</h1>
+  <h1 class="animated fadeInLeft titulo-general">Bienvenido {{user.username}} </h1>
+
+  
+    <div class="row">
+        <form action="">
+      {% for perro in perros %}
+      <div class="col-13 col-md-6 col-lg-6">
+        <div class="card tarjeta-perro animated bounceInUp">
+          {% if perro.fotografia_perro %}
+          <img src="{{perro.fotografia_perro.url}}" class="img-responsive card-img-top"> {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{perro.nombre_perro}}</h5>
+            <p class="card-text">{{ perro.descripcion }}</p>
+            <button class="esta "> {{perro.estado}}</button>
+            <button onclick="sweetalert()" type="button">Adoptar</button>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script>
+              function sweetalert() {
+                swal("Congratulations!", "Se ha recibido tu solicitud con éxito", "success");
+              } 
+            </script>
+          </div>
+        </div>
+      </div>
+
+
+      {% endfor %}
+
+    </form>
+
+    </div>
+  
+</div>
+{% endblock %}

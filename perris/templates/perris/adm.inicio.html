@@ -1,0 +1,39 @@
+{% extends 'perris/base.html' %}
+{% block content %}
+<div class="container">
+	{% if user.is_authenticated %}
+      
+       {% if user.username == "admin" %}
+         <h1 class="animated fadeInLeft titulo-general">Bienvenido Administrador </h1>
+         {% endif %}
+      <a href="{% url 'new_post_perro' %}" class="btn btn-success text-uppercase" >Nuevo Rescate</a>
+      {% endif %}
+	
+    <div class="row" >
+    
+          {% for perro in perros %}
+          <div class="col-13 col-md-6 col-lg-6">
+            <div class="card tarjeta-perro">
+               {% if perro.fotografia_perro %}
+                <img  src="{{perro.fotografia_perro.url}}" class="img-responsive card-img-top" >
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{perro.nombre_perro|upper}}</h5>
+              <p class="card-text">{{ perro.descripcion }}</p>
+				<div class="dropdown">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   Opciones
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				    <a class="btn " href="{% url 'edit_post_perro' pk=perro.pk %}">Modificar</a>
+				    <a class="btn" href="{% url 'delete_post_perro' pk=perro.pk %}">Eliminar</a>
+				  </div>
+				</div>
+            </div>
+          </div>
+      </div>
+    
+         {% endfor %}
+</div>
+</div>
+{% endblock %}

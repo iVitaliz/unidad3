@@ -1,0 +1,14 @@
+{% extends 'perris/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <br>
+        <br>
+        <h1>{{ perro.nombre_perro }}</h1>
+        <div id="mensajeC">
+                <h1>Los cambios se han actulizado correctamente</h1>
+                <h1>¡Gracias!</h1>
+                <br>
+            <a class="btn btn-info" href="{% url 'adm.inicio' %}">Aceptar</a>
+    </div>
+{% endblock %}
