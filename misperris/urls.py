@@ -29,6 +29,7 @@ router.register(r'groups',views.GroupViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'', include('perris.urls')),
+    url('', include('social.apps.django_app.urls',namespace='social')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('password-reset/',
          auth_views.PasswordResetView.as_view(

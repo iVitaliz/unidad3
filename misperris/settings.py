@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'perris',
     'rest_framework',
+    'social.apps.django_app.default',
 ]
 
 REST_FRAMEWORK = {
@@ -127,6 +128,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+AUTHENTICATION_BACKENDS = [
+    			'social.backends.facebook.FacebookAppOAuth2',
+    			'social.backends.facebook.FacebookOAuth2',
+    			'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1832988326800034'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'a80c6fbb2ab465f865e83cc96e44077b'
+
 
 #para que acepte Django subir archivos 
 
