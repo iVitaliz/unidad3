@@ -14,6 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#service worked
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR,'perris/static/js', 'serviceworker.js')
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'perris',
     'rest_framework',
     'social.apps.django_app.default',
+    'pwa',
 ]
 
 REST_FRAMEWORK = {
@@ -137,6 +140,7 @@ AUTHENTICATION_BACKENDS = [
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
 
+#redes sociales
 SOCIAL_AUTH_FACEBOOK_KEY = '1832988326800034'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'a80c6fbb2ab465f865e83cc96e44077b'
 
