@@ -15,7 +15,3 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-
-def base_layout(request):
-	template='perris/base.html'
-	return render(request,template)

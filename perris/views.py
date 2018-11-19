@@ -93,3 +93,7 @@ def register(request):
             variables['form'] = form
 
     return render(request, 'perris/register.html', variables)
+
+def base_layout(request):
+	template='perris/base.html'
+	return render(request,template)
