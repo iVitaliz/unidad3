@@ -30,7 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'', include('perris.urls')),
     path('', include('pwa.urls')),
-    url('', include('social.apps.django_app.urls',namespace='social')),
+    url(r'^auth/', include('social_django.urls', namespace='social')),  # <- Here
     path('accounts/', include('django.contrib.auth.urls')),
     path('password-reset/',
          auth_views.PasswordResetView.as_view(

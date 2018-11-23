@@ -24,10 +24,10 @@
 					<label>No estas registrado?</label>
 					<a href="{% url 'register' %}" >Registrate!</a>
 					<input type="submit" value="Ingresar" class="btn btn-primary" name="">
-					<a href="{% url 'social:begin' 'facebook' %}" class="btn btn-primary">Iniciar con Facebook</a>
-				</div>
-			</form>
+					<a href="{% url 'social:begin' 'google-oauth2' %}"class="btn btn-primary" >ingresa con Google</a><br>
+				
 		</div>
 	</div>
 </div>
+
 {% endblock %}
